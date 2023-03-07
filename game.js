@@ -1,3 +1,5 @@
+const Choices = ["rock", "paper", "scissors"];
+
 function getComputerSelection(Choices){
     x = Math.floor(Math.random() * 3);
     return Choices[x];
@@ -34,8 +36,17 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-const Choices = ["rock", "paper", "scissors"]
+function game(){
+    for(let i = 0; i < 5; i++){
+        let playerSelection = prompt("What's your choice? ");
+        playerSelection = playerSelection.toLowerCase();
+        const computerSelection = getComputerSelection(Choices);
+        playRound(playerSelection, computerSelection);
+    }
+}
+
 let playerSelection = prompt("What's your choice? ");
 playerSelection = playerSelection.toLowerCase();
-const computerSelection = getComputerSelection(Choices)
-playRound(playerSelection,computerSelection)
+const computerSelection = getComputerSelection(Choices);
+playRound(playerSelection,computerSelection);
+game()
